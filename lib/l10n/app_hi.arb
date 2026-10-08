@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "कृपया डिवाइस सेटिंग्स में इस ऐप के लिए ऑडियो फ़ाइलों का उपयोग करें ताकि हमें अपनी संगीत फ़ाइलें चला सकें।",
   "menuScreenTitle": "मेनू",
   "musicMenuScreenTitle": "संगीत",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "अब खेल रहे हैं",
   "shuffleSongsMenuTitle": "गानों की अदला बदली करें",
   "shuffleSettingTitle": "मिश्रण",

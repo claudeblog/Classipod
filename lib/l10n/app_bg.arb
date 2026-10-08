@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Моля, предоставете достъп до аудио файлове за това приложение в настройките на устройството, за да ни позволи да възпроизвеждаме вашите музикални файлове.",
   "menuScreenTitle": "Меню",
   "musicMenuScreenTitle": "Музика",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Сега играе",
   "shuffleSongsMenuTitle": "Разбъркани песни",
   "shuffleSettingTitle": "Разбъркване",

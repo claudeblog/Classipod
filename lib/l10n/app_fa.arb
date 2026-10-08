@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "لطفاً به فایلهای صوتی دسترسی به این برنامه در تنظیمات دستگاه اعطا کنید تا به ما اجازه دهد فایلهای موسیقی خود را پخش کنیم.",
   "menuScreenTitle": "منو",
   "musicMenuScreenTitle": "موسیقی",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "اکنون بازی کردن",
   "shuffleSongsMenuTitle": "آهنگ ها",
   "shuffleSettingTitle": "تغییر دادن",

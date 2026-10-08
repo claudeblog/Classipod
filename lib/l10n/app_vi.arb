@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Vui lòng cấp quyền truy cập tệp âm thanh cho ứng dụng này trong cài đặt thiết bị để cho phép chúng tôi phát các tệp nhạc của bạn.",
   "menuScreenTitle": "Menu",
   "musicMenuScreenTitle": "Âm nhạc",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Hiện đang chơi",
   "shuffleSongsMenuTitle": "Những bài hát xáo trộn",
   "shuffleSettingTitle": "Xáo trộn",

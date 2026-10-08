@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Harap berikan file audio akses untuk aplikasi ini di pengaturan perangkat untuk memungkinkan kami memutar file musik Anda.",
   "menuScreenTitle": "Menu",
   "musicMenuScreenTitle": "Musik",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Sekarang bermain",
   "shuffleSongsMenuTitle": "Lagu -lagu pengocok",
   "shuffleSettingTitle": "Shuffle",

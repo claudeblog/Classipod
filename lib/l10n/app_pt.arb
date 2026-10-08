@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Por favor, conceda o acesso aos arquivos de áudio a este aplicativo nas configurações do dispositivo para nos permitir reproduzir seus arquivos de música.",
   "menuScreenTitle": "Menu Principal",
   "musicMenuScreenTitle": "Música",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Reproduzindo Agora",
   "shuffleSongsMenuTitle": "Músicas Aleatórias",
   "shuffleSettingTitle": "Aleatório",

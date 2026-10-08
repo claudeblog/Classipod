@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Antakaa tämän sovelluksen äänitiedostot laiteasetuksissa, jotta voimme toistaa musiikkitiedostoja.",
   "menuScreenTitle": "Valikko",
   "musicMenuScreenTitle": "Musiikki",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Nyt pelaaminen",
   "shuffleSongsMenuTitle": "Sekoituslaulut",
   "shuffleSettingTitle": "Sekoittaa",

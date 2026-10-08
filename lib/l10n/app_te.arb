@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "దయచేసి మీ మ్యూజిక్ ఫైళ్ళను ప్లే చేయడానికి మాకు అనుమతించడానికి పరికర సెట్టింగ్‌లలో ఈ అనువర్తనం కోసం ఆడియో ఫైల్‌లను యాక్సెస్ చేయండి.",
   "menuScreenTitle": "మెను",
   "musicMenuScreenTitle": "సంగీతం",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "ఇప్పుడు ఆడుతున్నారు",
   "shuffleSongsMenuTitle": "షఫుల్ పాటలు",
   "shuffleSettingTitle": "షఫుల్",

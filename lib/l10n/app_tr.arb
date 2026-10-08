@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Müzik dosyalarınızı oynatmamıza izin vermek için lütfen cihaz ayarlarında bu uygulama için ses dosyaları erişimi verin.",
   "menuScreenTitle": "Menü",
   "musicMenuScreenTitle": "Müzik",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Şimdi oynuyor",
   "shuffleSongsMenuTitle": "Shuffle Şarkıları",
   "shuffleSettingTitle": "Karıştırmak",

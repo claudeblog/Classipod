@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "โปรดให้การเข้าถึงไฟล์เสียงสำหรับแอพนี้ในการตั้งค่าอุปกรณ์เพื่อให้เราเล่นไฟล์เพลงของคุณ",
   "menuScreenTitle": "เมนู",
   "musicMenuScreenTitle": "ดนตรี",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "ตอนนี้เล่น",
   "shuffleSongsMenuTitle": "เพลงสับเปลี่ยน",
   "shuffleSettingTitle": "การสับเปลี่ยน",

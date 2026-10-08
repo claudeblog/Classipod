@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Παρακαλούμε να παραχωρήσετε πρόσβαση αρχείων ήχου για αυτήν την εφαρμογή στις ρυθμίσεις της συσκευής για να μας επιτρέψετε να παίξουμε τα αρχεία μουσικής σας.",
   "menuScreenTitle": "Μενού",
   "musicMenuScreenTitle": "Μουσική",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Παίζοντας τώρα",
   "shuffleSongsMenuTitle": "Τραγούδια shuffle",
   "shuffleSettingTitle": "Ανάμιξη",

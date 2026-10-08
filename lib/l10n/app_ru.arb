@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Пожалуйста, предоставьте доступ аудиофайлов для этого приложения в настройках устройства, чтобы мы могли воспроизводить ваши музыкальные файлы.",
   "menuScreenTitle": "Меню",
   "musicMenuScreenTitle": "Музыка",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Теперь играю",
   "shuffleSongsMenuTitle": "Перетасовать песни",
   "shuffleSettingTitle": "Перетасовать",

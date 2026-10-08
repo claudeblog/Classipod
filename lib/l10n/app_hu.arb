@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Kérjük, adja meg az audio fájlok hozzáférését az alkalmazáshoz az eszköz beállításaiban, hogy lejátsszuk a zenei fájlokat.",
   "menuScreenTitle": "Menü",
   "musicMenuScreenTitle": "Zene",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Most játszik",
   "shuffleSongsMenuTitle": "Zsufferi dalok",
   "shuffleSettingTitle": "Keverés",

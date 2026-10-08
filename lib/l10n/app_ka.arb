@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "გთხოვთ, მიანიჭოთ აუდიო ფაილებს ამ აპლიკაციისთვის მოწყობილობის პარამეტრებში, რათა მოგვცეს თქვენი მუსიკალური ფაილების დაკვრა.",
   "menuScreenTitle": "მენიუ",
   "musicMenuScreenTitle": "მუსიკა",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "ახლა თამაშობს",
   "shuffleSongsMenuTitle": "Shuffle სიმღერები",
   "shuffleSettingTitle": "შფოთვა",

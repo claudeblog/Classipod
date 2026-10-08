@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Будь ласка, надайте доступ до аудіофайлів для цього додатка в налаштуваннях пристрою, щоб ми могли відтворювати ваші музичні файли.",
   "menuScreenTitle": "Меню",
   "musicMenuScreenTitle": "Музика",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Тепер грає",
   "shuffleSongsMenuTitle": "Shuffle Songs",
   "shuffleSettingTitle": "Перемикач",

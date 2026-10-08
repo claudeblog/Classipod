@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Vinsamlegast gefðu hljóðskrár aðgang fyrir þetta forrit í tækjastillingunum til að leyfa okkur að spila tónlistarskrárnar þínar.",
   "menuScreenTitle": "Matseðill",
   "musicMenuScreenTitle": "Tónlist",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Spila nú",
   "shuffleSongsMenuTitle": "Stokka lög",
   "shuffleSettingTitle": "Uppstokkun",

@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Mangyaring bigyan ang pag -access ng mga audio file para sa app na ito sa mga setting ng aparato upang payagan kaming i -play ang iyong mga file ng musika.",
   "menuScreenTitle": "Menu",
   "musicMenuScreenTitle": "Musika",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Naglalaro ngayon",
   "shuffleSongsMenuTitle": "Mga kanta ng shuffle",
   "shuffleSettingTitle": "Shuffle",

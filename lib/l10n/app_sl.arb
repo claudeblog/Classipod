@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "V nastavitvah naprave dodelite dostop do zvočnih datotek za to aplikacijo, da nam omogoča predvajanje vaših glasbenih datotek.",
   "menuScreenTitle": "Meni",
   "musicMenuScreenTitle": "Glasba",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Zdaj igranje",
   "shuffleSongsMenuTitle": "Premeščanje pesmi",
   "shuffleSettingTitle": "Shuffle",

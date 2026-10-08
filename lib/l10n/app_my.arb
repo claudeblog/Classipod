@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "ကျေးဇူးပြု. သင်၏တေးဂီတဖိုင်များကိုဖွင့်ရန်ခွင့်ပြုရန် device settings တွင်ဤအက်ပလီကေးရှင်းအတွက်အသံဖိုင်များကို 0 င်ရောက်ခွင့်ပြုပါ။",
   "menuScreenTitle": "အစားအသောက်စာရင်း",
   "musicMenuScreenTitle": "ဂီတ",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "ယခုကစား",
   "shuffleSongsMenuTitle": "Shuffle သီချင်းများ",
   "shuffleSettingTitle": "ရောနှော",

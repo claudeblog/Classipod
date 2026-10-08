@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "장치 설정 에서이 앱에 대한 오디오 파일 액세스 권한을 부여하여 음악 파일을 재생할 수 있습니다.",
   "menuScreenTitle": "메뉴",
   "musicMenuScreenTitle": "음악",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "이제 연주합니다",
   "shuffleSongsMenuTitle": "셔플 노래",
   "shuffleSettingTitle": "혼합",

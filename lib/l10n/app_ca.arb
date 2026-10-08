@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Doneu accés als fitxers d'àudio per a aquesta aplicació a la configuració del dispositiu per permetre'ns reproduir els vostres fitxers de música.",
   "menuScreenTitle": "Menú",
   "musicMenuScreenTitle": "Música",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Ara jugant",
   "shuffleSongsMenuTitle": "Cançons de barreja",
   "shuffleSettingTitle": "Barrejar",

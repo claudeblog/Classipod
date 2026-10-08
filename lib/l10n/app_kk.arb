@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Музыкалық файлдарды ойнатуға мүмкіндік беру үшін осы қолданба үшін Audio файлдарына кіруді беріңіз.",
   "menuScreenTitle": "Дастархан мәзірі",
   "musicMenuScreenTitle": "Музыка",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Қазір ойнау",
   "shuffleSongsMenuTitle": "Кездейсоқ әндер",
   "shuffleSettingTitle": "Қырқау",

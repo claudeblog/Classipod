@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "デバイス設定のこのアプリのオーディオファイルアクセスを許可して、音楽ファイルを再生できるようにしてください。",
   "menuScreenTitle": "メニュー",
   "musicMenuScreenTitle": "音楽",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "今遊んでいます",
   "shuffleSongsMenuTitle": "シャッフルソング",
   "shuffleSettingTitle": "シャッフル",

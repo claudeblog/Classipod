@@ -26,6 +26,8 @@ a music subscription, offline server downloads, or server playlist syncing.
   **Settings → Library Settings → Subsonic**.
 - 🏠 Combine local and server tracks, or use **Hide Local Music** while streaming.
 - 🧑‍🎤 Browse songs, artists, album artists, albums, and genres.
+- 📻 Open **Podcasts** to browse audio files stored in folders whose name
+  contains `casts`, while **Music** lists the rest of your library.
 - 🔍 Search songs, artists, albums, and your ClassiPod playlists.
 - 📂 Discover Android music through MediaStore. Select a parent music folder on
   iOS, macOS, Windows, or Linux and scan its subfolders automatically.

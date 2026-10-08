@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Andke selle rakenduse jaoks seadme sätetes juurdepääs helifailidele, et saaksime teie muusikafaile mängida.",
   "menuScreenTitle": "Menüü",
   "musicMenuScreenTitle": "Muusika",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Nüüd mängib",
   "shuffleSongsMenuTitle": "Laulud segama",
   "shuffleSettingTitle": "Segadus",

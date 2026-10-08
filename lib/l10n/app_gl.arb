@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Concede os ficheiros de audio acceso a esta aplicación na configuración do dispositivo para permitirnos reproducir os teus ficheiros de música.",
   "menuScreenTitle": "Menú",
   "musicMenuScreenTitle": "Música",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Agora xogando",
   "shuffleSongsMenuTitle": "Cancións de barras",
   "shuffleSettingTitle": "Baralla",

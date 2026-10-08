@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "කරුණාකර ඔබේ සංගීත ලිපිගොනු වාදනය කිරීමට ඉඩ දීම සඳහා කරුණාකර උපාංග සැකසුම් තුළ මෙම යෙදුම සඳහා ශ්රව්ය ලිපිගොනු සඳහා ප්රවේශය ලබා දෙන්න.",
   "menuScreenTitle": "මෙනුව",
   "musicMenuScreenTitle": "සංගීතය",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "දැන් සෙල්ලම් කරනවා",
   "shuffleSongsMenuTitle": "ගීත මාරු කරන්න",
   "shuffleSettingTitle": "මාරු කරන්න",

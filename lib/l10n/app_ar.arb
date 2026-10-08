@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "يرجى منح وصول ملفات الصوت لهذا التطبيق في إعدادات الجهاز للسماح لنا بتشغيل ملفات الموسيقى الخاصة بك.",
   "menuScreenTitle": "قائمة طعام",
   "musicMenuScreenTitle": "موسيقى",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "اللعب الآن",
   "shuffleSongsMenuTitle": "أغاني خلط",
   "shuffleSettingTitle": "خلط",

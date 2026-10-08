@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Molimo obratite audio datoteke Pristup ovoj aplikaciji u postavkama uređaja kako biste nam omogućili reprodukciju muzičkih datoteka.",
   "menuScreenTitle": "Meni",
   "musicMenuScreenTitle": "Muzika",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Sada igranje",
   "shuffleSongsMenuTitle": "Shuffle pjesme",
   "shuffleSettingTitle": "Miješati",

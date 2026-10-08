@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "אנא הענק גישה לקבצי שמע עבור אפליקציה זו בהגדרות המכשיר כדי לאפשר לנו לנגן את קבצי המוזיקה שלך.",
   "menuScreenTitle": "תַפרִיט",
   "musicMenuScreenTitle": "מוּסִיקָה",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "עכשיו משחק",
   "shuffleSongsMenuTitle": "שירי דשדוש",
   "shuffleSettingTitle": "לְעַרְבֵּב",

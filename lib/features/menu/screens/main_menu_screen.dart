@@ -2,7 +2,9 @@ import 'dart:async';
 
 import 'package:classipod/core/extensions/build_context_extensions.dart';
 import 'package:classipod/core/extensions/go_router_extensions.dart';
+import 'package:classipod/core/models/library_context.dart';
 import 'package:classipod/core/navigation/routes.dart';
+import 'package:classipod/core/providers/library_context_provider.dart';
 import 'package:classipod/core/services/audio_player_service.dart';
 import 'package:classipod/core/widgets/display_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
@@ -15,6 +17,7 @@ import 'package:go_router/go_router.dart';
 
 enum _MainMenuDisplayItems {
   music,
+  podcasts,
   settings,
   shuffleSongs,
   nowPlaying;
@@ -23,6 +26,8 @@ enum _MainMenuDisplayItems {
     switch (this) {
       case music:
         return context.localization.musicMenuScreenTitle;
+      case podcasts:
+        return context.localization.podcastsMenuScreenTitle;
       case settings:
         return context.localization.settingsScreenTitle;
       case shuffleSongs:
@@ -63,7 +68,18 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
     setState(() => selectedDisplayItem = displayItems.indexOf(menuItem));
     switch (menuItem) {
       case _MainMenuDisplayItems.music:
+        ref.read(libraryContextProvider.notifier).state = LibraryContext.music;
         context.goNamed(Routes.musicMenu.name);
+        break;
+      case _MainMenuDisplayItems.podcasts:
+        ref.read(libraryContextProvider.notifier).state =
+            LibraryContext.podcasts;
+        unawaited(ref.read(splitScreenViewControllerProvider).closeSplitView());
+        await context.pushNamed(
+          Routes.coverFlow.name,
+          extra: Routes.musicMenu.name,
+        );
+        unawaited(ref.read(splitScreenViewControllerProvider).openSplitView());
         break;
       case _MainMenuDisplayItems.nowPlaying:
         await _navigateToNowPlayingScreen();
@@ -92,6 +108,10 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
     if (!mounted || context.router.locationNamed != routeName) return;
     switch (displayItems[selectedDisplayItem]) {
       case _MainMenuDisplayItems.music:
+        ref.read(splitScreenControllerProvider.notifier).changeSplitScreenType =
+            SplitScreenType.albumArt;
+        break;
+      case _MainMenuDisplayItems.podcasts:
         ref.read(splitScreenControllerProvider.notifier).changeSplitScreenType =
             SplitScreenType.albumArt;
         break;

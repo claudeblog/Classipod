@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Vennligst gi lydfiler tilgang til denne appen i enhetsinnstillingene for å la oss spille av musikkfilene dine.",
   "menuScreenTitle": "Meny",
   "musicMenuScreenTitle": "Musikk",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Spiller nå",
   "shuffleSongsMenuTitle": "Shuffle -sanger",
   "shuffleSettingTitle": "Shuffle",

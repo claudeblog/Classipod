@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Lūdzu, piešķiriet Audio Files piekļuvi šai lietotnei ierīces iestatījumos, lai ļautu mums atskaņot jūsu mūzikas failus.",
   "menuScreenTitle": "Ēdienkarte",
   "musicMenuScreenTitle": "Mūzika",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Tagad spēlēšana",
   "shuffleSongsMenuTitle": "Shuffle dziesmas",
   "shuffleSettingTitle": "Šūpot",

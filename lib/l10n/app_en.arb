@@ -55,6 +55,10 @@
   "@musicMenuScreenTitle": {
     "description": "The title of the music menu screen"
   },
+  "podcastsMenuScreenTitle": "Podcasts",
+  "@podcastsMenuScreenTitle": {
+    "description": "The title of the podcasts menu screen"
+  },
   "nowPlayingScreenTitle": "Now Playing",
   "@nowPlayingScreenTitle": {
     "description": "The title of the now playing screen"

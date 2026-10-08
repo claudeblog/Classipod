@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Ве молиме, дајте пристап за аудио датотеки за оваа апликација во поставките на уредот за да ни овозможи да ги репродуцираме вашите музички датотеки.",
   "menuScreenTitle": "Мени",
   "musicMenuScreenTitle": "Музика",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Сега игра",
   "shuffleSongsMenuTitle": "Песни за мешање",
   "shuffleSettingTitle": "Shuffle",

@@ -8,6 +8,7 @@
   "audioAccessPermissionPermanentlyDeniedContent": "Bitte gewähren Sie Zugriff auf Audiodateien für diese App in den Geräteeinstellungen, um uns das Abspielen von Musikdateien zu ermöglichen.",
   "menuScreenTitle": "Menü",
   "musicMenuScreenTitle": "Musik",
+  "podcastsMenuScreenTitle": "Podcasts",
   "nowPlayingScreenTitle": "Derzeitige Wiedergabe",
   "shuffleSongsMenuTitle": "Zufällige Titel",
   "shuffleSettingTitle": "Zufall",
