@@ -4,7 +4,8 @@
 ### New features
 
 - Add a Podcasts entry to the main menu. Audio files whose parent folder name
-  contains `casts` are listed under Podcasts, and the rest under Music.
+  contains `pod` or `cast` (case insensitive) are listed under Podcasts, and the
+  rest under Music.
 
 ## 2.1.0
 ### New features
