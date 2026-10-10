@@ -374,6 +374,26 @@
   "@addToOnTheGoPlaylist": {
     "description": "The text of the add to on-the-go playlist option"
   },
+  "addToPlaylist": "Add to Playlist",
+  "@addToPlaylist": {
+    "description": "The text of the add to playlist option"
+  },
+  "addAlbumToPlaylist": "Add Album to Playlist",
+  "@addAlbumToPlaylist": {
+    "description": "The text of the add album to playlist option"
+  },
+  "addToPlaylistTitle": "Add to Playlist",
+  "@addToPlaylistTitle": {
+    "description": "The title of the playlist selection screen"
+  },
+  "choosePlaylist": "Choose a Playlist",
+  "@choosePlaylist": {
+    "description": "Message shown when no saved playlist exists yet"
+  },
+  "onTheGoPlaylist": "On-The-Go",
+  "@onTheGoPlaylist": {
+    "description": "The name of the on-the-go playlist"
+  },
   "addAlbumToOnTheGoPlaylist": "Add Album to On-The-Go",
   "@addAlbumToOnTheGoPlaylist": {
     "description": "The text of the add album to on-the-go playlist option"

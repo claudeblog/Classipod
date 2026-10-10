@@ -78,14 +78,19 @@ class _PlaylistsSongsScreenState extends ConsumerState<PlaylistSongsScreen>
     setState(() => selectedDisplayItem = index);
     if (index == 0) {
       if (widget.playlistKey == null) {
-        await ref
-            .read(playlistsProvider.notifier)
-            .saveNewPlaylist(
-              newPlaylistPlaceholderString: context.localization.newPlaylist,
-              songs: playlist.songs,
-            );
-        if (mounted) {
-          context.pop();
+        final newPlaylistName = await context.pushNamed(
+          Routes.playlistName.name,
+          extra: context.localization.newPlaylist,
+        );
+        if (!mounted) return;
+        if (newPlaylistName is String && newPlaylistName.trim().isNotEmpty) {
+          await ref
+              .read(playlistsProvider.notifier)
+              .createPlaylist(
+                playlistName: newPlaylistName,
+                songs: playlist.songs,
+              );
+          if (mounted) context.pop();
         }
       }
       // If the playlist is not on-the-go, it means we are renaming an existing playlist

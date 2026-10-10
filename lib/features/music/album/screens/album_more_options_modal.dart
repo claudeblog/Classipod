@@ -4,20 +4,21 @@ import 'package:classipod/core/navigation/routes.dart';
 import 'package:classipod/core/widgets/options_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/album/models/album_model.dart';
+import 'package:classipod/features/music/playlist/models/playlist_model.dart';
 import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 enum _AlbumMoreOptions {
-  addAlbumToOnTheGo,
+  addAlbumToPlaylist,
   browseArtist,
   cancel;
 
   String title(BuildContext context) {
     switch (this) {
-      case addAlbumToOnTheGo:
-        return context.localization.addAlbumToOnTheGoPlaylist;
+      case addAlbumToPlaylist:
+        return context.localization.addAlbumToPlaylist;
       case browseArtist:
         return context.localization.browseArtist;
       case cancel:
@@ -49,7 +50,7 @@ class _AlbumMoreOptionsModalState extends ConsumerState<AlbumMoreOptionsModal>
 
   @override
   List<_AlbumMoreOptions> get displayItems => [
-    _AlbumMoreOptions.addAlbumToOnTheGo,
+    _AlbumMoreOptions.addAlbumToPlaylist,
     if (widget.showBrowseArtist) _AlbumMoreOptions.browseArtist,
     _AlbumMoreOptions.cancel,
   ];
@@ -61,11 +62,20 @@ class _AlbumMoreOptionsModalState extends ConsumerState<AlbumMoreOptionsModal>
   Future<void> _performAction(_AlbumMoreOptions optionItem) async {
     setState(() => selectedDisplayItem = displayItems.indexOf(optionItem));
     switch (optionItem) {
-      case _AlbumMoreOptions.addAlbumToOnTheGo:
-        ref
-            .read(playlistsProvider.notifier)
-            .addAlbumToPlaylist(widget.albumDetail);
-        context.pop();
+      case _AlbumMoreOptions.addAlbumToPlaylist:
+        final playlist = await context.pushNamed(
+          Routes.playlistSelection.name,
+          extra: widget.albumDetail.albumSongs,
+        );
+        if (playlist is PlaylistModel && playlist.key != null) {
+          await ref
+              .read(playlistsProvider.notifier)
+              .addSongsToPlaylist(
+                playlistKey: playlist.key,
+                songs: widget.albumDetail.albumSongs,
+              );
+        }
+        if (mounted) context.pop();
         break;
       case _AlbumMoreOptions.browseArtist:
         await context.openUniqueNamed(

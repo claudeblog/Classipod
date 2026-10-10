@@ -104,6 +104,45 @@ class PlaylistsNotifier extends Notifier<List<PlaylistModel>> {
     }
   }
 
+  /// Adds [songs] to an existing saved playlist, identified by its Hive [key].
+  /// The on-the-go playlist (key null) is handled by [addSongToPlaylist] and
+  /// cannot be targeted here. Returns false when the playlist no longer exists.
+  Future<bool> addSongsToPlaylist({
+    required dynamic playlistKey,
+    required List<MusicMetadata> songs,
+  }) async {
+    if (playlistKey == null || songs.isEmpty) return false;
+
+    final currentPlaylist = _playlistBox.get(playlistKey);
+    if (currentPlaylist == null) return false;
+
+    var updatedPlaylist = currentPlaylist;
+    for (final song in songs) {
+      updatedPlaylist = updatedPlaylist.addSongToPlaylist(song);
+    }
+    await _playlistBox.put(playlistKey, updatedPlaylist);
+    refreshProvider();
+    return true;
+  }
+
+  /// Creates a saved playlist named [playlistName] holding [songs].
+  /// Returns false when [songs] is empty, matching [saveNewPlaylist].
+  Future<bool> createPlaylist({
+    required String playlistName,
+    required List<MusicMetadata> songs,
+  }) async {
+    if (songs.isEmpty) return false;
+
+    final trimmedName = playlistName.trim();
+    final newPlaylist = PlaylistModel(
+      name: trimmedName.isEmpty ? 'New Playlist' : trimmedName,
+      songs: songs,
+    );
+    await _playlistBox.add(newPlaylist);
+    refreshProvider();
+    return true;
+  }
+
   Future<void> removeSongFromPlaylist({
     required PlaylistModel playlistModel,
     MusicMetadata? song,

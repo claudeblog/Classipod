@@ -6,6 +6,10 @@
 - Add a Podcasts entry to the main menu. Audio files whose parent folder name
   contains `pod` or `cast` (case insensitive) are listed under Podcasts, and the
   rest under Music.
+- Adding songs to a playlist now asks which playlist to use. Pick any saved
+  playlist, create a new one with a typed name, or fall back to On-The-Go, from
+  songs, albums, search results and Now Playing alike. Saving the On-The-Go
+  playlist also asks for a name instead of auto-numbering it.
 
 ## 2.1.0
 ### New features
