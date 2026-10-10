@@ -6,8 +6,7 @@ import 'package:classipod/core/widgets/options_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/album/models/album_model.dart';
 import 'package:classipod/features/music/album/providers/album_details_provider.dart';
-import 'package:classipod/features/music/playlist/models/playlist_model.dart';
-import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
+import 'package:classipod/features/music/playlist/widgets/add_to_playlist_helper.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -73,32 +72,13 @@ class _SearchMoreOptionsModalState extends ConsumerState<SearchMoreOptionsModal>
       case _SearchMoreOptions.addToPlaylist:
         final song = widget.songMetadata;
         if (song == null) break;
-        final playlist = await context.pushNamed(
-          Routes.playlistSelection.name,
-          extra: [song],
-        );
-        if (playlist is PlaylistModel && playlist.key != null) {
-          await ref
-              .read(playlistsProvider.notifier)
-              .addSongsToPlaylist(playlistKey: playlist.key, songs: [song]);
-        }
+        await addSongsToChosenPlaylist(context, ref, [song]);
         if (mounted) context.pop();
         break;
       case _SearchMoreOptions.addAlbumToPlaylist:
         final album = widget.albumDetail;
         if (album == null) break;
-        final playlist = await context.pushNamed(
-          Routes.playlistSelection.name,
-          extra: album.albumSongs,
-        );
-        if (playlist is PlaylistModel && playlist.key != null) {
-          await ref
-              .read(playlistsProvider.notifier)
-              .addSongsToPlaylist(
-                playlistKey: playlist.key,
-                songs: album.albumSongs,
-              );
-        }
+        await addSongsToChosenPlaylist(context, ref, album.albumSongs);
         if (mounted) context.pop();
         break;
       case _SearchMoreOptions.browseAlbum:

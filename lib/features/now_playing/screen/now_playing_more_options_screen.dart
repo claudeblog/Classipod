@@ -5,8 +5,7 @@ import 'package:classipod/core/navigation/routes.dart';
 import 'package:classipod/core/widgets/display_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/album/providers/album_details_provider.dart';
-import 'package:classipod/features/music/playlist/models/playlist_model.dart';
-import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
+import 'package:classipod/features/music/playlist/widgets/add_to_playlist_helper.dart';
 import 'package:classipod/features/music/songs/screens/song_edit_screen.dart';
 import 'package:classipod/features/now_playing/provider/now_playing_details_provider.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
@@ -84,18 +83,7 @@ class _NowPlayingMoreOptionsScreenState
           _closeScreen();
           return;
         }
-        final playlist = await context.pushNamed(
-          Routes.playlistSelection.name,
-          extra: [currentSongMetadata],
-        );
-        if (playlist is PlaylistModel && playlist.key != null) {
-          await ref
-              .read(playlistsProvider.notifier)
-              .addSongsToPlaylist(
-                playlistKey: playlist.key,
-                songs: [currentSongMetadata],
-              );
-        }
+        await addSongsToChosenPlaylist(context, ref, [currentSongMetadata]);
         _closeScreen();
         break;
       case _NowPlayingMoreOptions.browseAlbum:

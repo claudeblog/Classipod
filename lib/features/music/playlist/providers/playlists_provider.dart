@@ -104,6 +104,20 @@ class PlaylistsNotifier extends Notifier<List<PlaylistModel>> {
     }
   }
 
+  /// Adds [songs] to the in-memory on-the-go playlist.
+  ///
+  /// The on-the-go playlist is never persisted, which is why it needs its own
+  /// path instead of [addSongsToPlaylist]: that one addresses playlists by
+  /// Hive key and this one has none.
+  void addSongsToOnTheGoPlaylist(List<MusicMetadata> songs) {
+    if (songs.isEmpty) return;
+    var onTheGo = state[0];
+    for (final song in songs) {
+      onTheGo = onTheGo.addSongToPlaylist(song);
+    }
+    state = [onTheGo, if (state.length > 1) ...state.sublist(1)];
+  }
+
   /// Adds [songs] to an existing saved playlist, identified by its Hive [key].
   /// The on-the-go playlist (key null) is handled by [addSongToPlaylist] and
   /// cannot be targeted here. Returns false when the playlist no longer exists.

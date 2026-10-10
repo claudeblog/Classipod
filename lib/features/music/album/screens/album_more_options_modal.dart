@@ -4,8 +4,7 @@ import 'package:classipod/core/navigation/routes.dart';
 import 'package:classipod/core/widgets/options_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/album/models/album_model.dart';
-import 'package:classipod/features/music/playlist/models/playlist_model.dart';
-import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
+import 'package:classipod/features/music/playlist/widgets/add_to_playlist_helper.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
@@ -63,18 +62,11 @@ class _AlbumMoreOptionsModalState extends ConsumerState<AlbumMoreOptionsModal>
     setState(() => selectedDisplayItem = displayItems.indexOf(optionItem));
     switch (optionItem) {
       case _AlbumMoreOptions.addAlbumToPlaylist:
-        final playlist = await context.pushNamed(
-          Routes.playlistSelection.name,
-          extra: widget.albumDetail.albumSongs,
+        await addSongsToChosenPlaylist(
+          context,
+          ref,
+          widget.albumDetail.albumSongs,
         );
-        if (playlist is PlaylistModel && playlist.key != null) {
-          await ref
-              .read(playlistsProvider.notifier)
-              .addSongsToPlaylist(
-                playlistKey: playlist.key,
-                songs: widget.albumDetail.albumSongs,
-              );
-        }
         if (mounted) context.pop();
         break;
       case _AlbumMoreOptions.browseArtist:

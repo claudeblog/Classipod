@@ -154,4 +154,30 @@ void main() {
     ]);
     expect(box.length, 2);
   });
+
+  test('addSongsToOnTheGoPlaylist fills the in-memory playlist', () async {
+    final notifier = container.read(playlistsProvider.notifier);
+    await notifier.createPlaylist(playlistName: 'Saved', songs: [song('Z')]);
+
+    notifier.addSongsToOnTheGoPlaylist([song('A'), song('B')]);
+
+    final playlists = container.read(playlistsProvider);
+    expect(playlists.first.songs.map((metadata) => metadata.trackName), [
+      'A',
+      'B',
+    ]);
+    // The saved playlist is untouched and nothing new is persisted.
+    expect(playlists[1].songs.single.trackName, 'Z');
+    expect(box.length, 1);
+  });
+
+  test('addSongsToOnTheGoPlaylist ignores duplicates and empty input', () {
+    final notifier = container.read(playlistsProvider.notifier);
+
+    notifier.addSongsToOnTheGoPlaylist([]);
+    expect(container.read(playlistsProvider).first.songs, isEmpty);
+
+    notifier.addSongsToOnTheGoPlaylist([song('A'), song('A')]);
+    expect(container.read(playlistsProvider).first.songs, hasLength(1));
+  });
 }
