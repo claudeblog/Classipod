@@ -6,6 +6,7 @@ import 'package:classipod/core/navigation/routes.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/playlist/models/add_to_playlist_action.dart';
 import 'package:classipod/features/music/playlist/models/playlist_model.dart';
+import 'package:classipod/features/music/playlist/models/playlist_name_result.dart';
 import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
 import 'package:classipod/features/music/playlist/widgets/placeholder_list_tile.dart';
 import 'package:classipod/features/music/playlist/widgets/playlist_list_tile.dart';
@@ -69,22 +70,21 @@ class _PlaylistSelectionScreenState
 
     switch (AddToPlaylistAction.values[index - savedPlaylists.length]) {
       case AddToPlaylistAction.newPlaylist:
-        final newPlaylistName = await context.pushNamed(
-          Routes.playlistName.name,
-          extra: context.localization.newPlaylist,
-        );
-        if (!mounted) return;
-        if (newPlaylistName is String && newPlaylistName.trim().isNotEmpty) {
-          await ref
-              .read(playlistsProvider.notifier)
-              .createPlaylist(playlistName: newPlaylistName, songs: []);
-          final created = ref
-              .read(playlistsProvider)
-              .where((playlist) => playlist.name == newPlaylistName.trim())
-              .lastOrNull;
-          if (mounted && created != null) {
-            context.pop(created);
-          }
+        final result = await context.pushNamed(Routes.playlistName.name);
+        if (!mounted || result is! PlaylistNameResult || !result.isSubmitted) {
+          return;
+        }
+        // The new playlist is created empty and the caller inserts the
+        // songs, so the same identity reconciliation runs for every target.
+        await ref
+            .read(playlistsProvider.notifier)
+            .createPlaylist(playlistName: result.name!, songs: const []);
+        final created = ref
+            .read(playlistsProvider)
+            .where((playlist) => playlist.name == result.name)
+            .lastOrNull;
+        if (mounted && created != null) {
+          context.pop(created);
         }
         break;
       case AddToPlaylistAction.onTheGo:

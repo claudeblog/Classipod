@@ -1,17 +1,20 @@
 import 'package:classipod/core/navigation/routes.dart';
+import 'package:classipod/core/utils/playlist_name.dart';
 import 'package:classipod/core/widgets/input_text_bar.dart';
 import 'package:classipod/features/custom_screen_elements/custom_input_text_screen.dart';
+import 'package:classipod/features/music/playlist/models/playlist_name_result.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
-/// Asks for the name of a playlist being created, either from the playlist
-/// selection screen or from an empty on-the-go playlist. Pops with the typed
-/// name, or with null when the user backs out.
+/// Asks for the name of a playlist being created.
+///
+/// Pops with a [PlaylistNameResult]: a submitted name when the user leaves the
+/// editor (MENU or Play), and an empty cancelled result when they back out
+/// while the text field is still open. The field always starts empty so the
+/// user types the name from scratch.
 class PlaylistNameScreen extends ConsumerStatefulWidget {
-  final String initialName;
-
-  const PlaylistNameScreen({super.key, required this.initialName});
+  const PlaylistNameScreen({super.key});
 
   @override
   ConsumerState createState() => _PlaylistNameScreenState();
@@ -25,10 +28,15 @@ class _PlaylistNameScreenState extends ConsumerState<PlaylistNameScreen>
   @override
   List get displayItems => const [];
 
-  @override
-  void initState() {
-    inputText = widget.initialName;
-    super.initState();
+  /// Leaving the editor is the confirmation gesture: the typed name is
+  /// submitted so the playlist is saved without a separate confirm step.
+  void _submit() {
+    final name = capitalizeFirstLetter(inputText);
+    if (name.isEmpty) {
+      context.pop(const PlaylistNameResult.cancelled());
+    } else {
+      context.pop(PlaylistNameResult.submitted(name));
+    }
   }
 
   @override
@@ -36,9 +44,12 @@ class _PlaylistNameScreenState extends ConsumerState<PlaylistNameScreen>
     if (isInputTextBarActive) {
       setState(() => isInputTextBarActive = false);
     } else {
-      context.pop();
+      _submit();
     }
   }
+
+  @override
+  void onSelectAction() => _submit();
 
   @override
   Widget build(BuildContext context) {

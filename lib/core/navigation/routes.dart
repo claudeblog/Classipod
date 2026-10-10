@@ -614,13 +614,12 @@ final routerProvider = Provider(
                                 path: Routes.playlistName.name,
                                 name: Routes.playlistName.name,
                                 parentNavigatorKey: rootNavigatorKey,
-                                pageBuilder: (context, state) => CupertinoPage(
-                                  child: ScreenPageContent(
-                                    child: PlaylistNameScreen(
-                                      initialName: state.extra as String,
+                                pageBuilder: (context, state) =>
+                                    const CupertinoPage(
+                                      child: ScreenPageContent(
+                                        child: PlaylistNameScreen(),
+                                      ),
                                     ),
-                                  ),
-                                ),
                               ),
                             ],
                           ),
