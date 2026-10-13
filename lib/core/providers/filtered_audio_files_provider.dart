@@ -1,6 +1,5 @@
 import 'dart:collection';
 
-import 'package:classipod/core/models/library_context.dart';
 import 'package:classipod/core/models/music_metadata.dart';
 import 'package:classipod/core/providers/library_context_provider.dart';
 import 'package:classipod/core/services/audio_files_service.dart';
@@ -50,9 +49,9 @@ final filteredAudioFilesProvider =
 
       final List<MusicMetadata> libraryFilteredList = filteredList
           .where(
-            (audioFileMetadata) => libraryContext == LibraryContext.podcasts
-                ? isPodcastPath(audioFileMetadata.filePath)
-                : !isPodcastPath(audioFileMetadata.filePath),
+            (audioFileMetadata) =>
+                libraryContextOfPath(audioFileMetadata.filePath) ==
+                libraryContext,
           )
           .toList();
 

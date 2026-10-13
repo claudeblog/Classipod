@@ -18,6 +18,7 @@ import 'package:go_router/go_router.dart';
 enum _MainMenuDisplayItems {
   music,
   podcasts,
+  audiobooks,
   settings,
   shuffleSongs,
   nowPlaying;
@@ -28,6 +29,8 @@ enum _MainMenuDisplayItems {
         return context.localization.musicMenuScreenTitle;
       case podcasts:
         return context.localization.podcastsMenuScreenTitle;
+      case audiobooks:
+        return context.localization.audiobooksMenuScreenTitle;
       case settings:
         return context.localization.settingsScreenTitle;
       case shuffleSongs:
@@ -74,12 +77,12 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
       case _MainMenuDisplayItems.podcasts:
         ref.read(libraryContextProvider.notifier).state =
             LibraryContext.podcasts;
-        unawaited(ref.read(splitScreenViewControllerProvider).closeSplitView());
-        await context.pushNamed(
-          Routes.coverFlow.name,
-          extra: Routes.musicMenu.name,
-        );
-        unawaited(ref.read(splitScreenViewControllerProvider).openSplitView());
+        await _openLibraryContext(Routes.musicMenu.name);
+        break;
+      case _MainMenuDisplayItems.audiobooks:
+        ref.read(libraryContextProvider.notifier).state =
+            LibraryContext.audiobooks;
+        await _openLibraryContext(Routes.musicMenu.name);
         break;
       case _MainMenuDisplayItems.nowPlaying:
         await _navigateToNowPlayingScreen();
@@ -92,6 +95,16 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
         await _navigateToNowPlayingScreen();
         break;
     }
+  }
+
+  /// Abre a biblioteca (songs/artists/albums/genres via Cover Flow) já
+  /// filtrada pelo contexto de biblioteca selecionado. Fecha o split view
+  /// durante a navegação, como faz a tela de Now Playing.
+  Future<void> _openLibraryContext(String parentRoute) async {
+    unawaited(ref.read(splitScreenViewControllerProvider).closeSplitView());
+    await context.pushNamed(Routes.coverFlow.name, extra: parentRoute);
+    if (!mounted) return;
+    unawaited(ref.read(splitScreenViewControllerProvider).openSplitView());
   }
 
   Future<void> _navigateToNowPlayingScreen() async {
@@ -112,6 +125,10 @@ class _MainMenuScreenState extends ConsumerState<MainMenuScreen>
             SplitScreenType.albumArt;
         break;
       case _MainMenuDisplayItems.podcasts:
+        ref.read(splitScreenControllerProvider.notifier).changeSplitScreenType =
+            SplitScreenType.albumArt;
+        break;
+      case _MainMenuDisplayItems.audiobooks:
         ref.read(splitScreenControllerProvider.notifier).changeSplitScreenType =
             SplitScreenType.albumArt;
         break;

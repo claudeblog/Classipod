@@ -1,1 +1,1 @@
-enum LibraryContext { music, podcasts }
+enum LibraryContext { music, podcasts, audiobooks }

@@ -6,6 +6,11 @@
 - Add a Podcasts entry to the main menu. Audio files whose parent folder name
   contains `pod` or `cast` (case insensitive) are listed under Podcasts, and the
   rest under Music.
+- Add an Audiobooks entry to the main menu, following the same rule as Podcasts:
+  folders whose name contains `book` are listed under Audiobooks. A folder
+  matching both rules (like `Audiobooks`) counts as an audiobook only, so every
+  file appears in exactly one of Music, Podcasts or Audiobooks. `Audiobooks/` is
+  also a default included folder on Android, alongside `Music/` and `Podcasts/`.
 - Adding songs to a playlist now asks which playlist to use. Pick any saved
   playlist, create a new one with a typed name, or fall back to On-The-Go, from
   songs, albums, search results and Now Playing alike. Saving the On-The-Go
