@@ -470,6 +470,22 @@
   "@editSongOption": {
     "description": "Label for the option to edit the current song metadata"
   },
+  "deleteSongOption": "Delete",
+  "@deleteSongOption": {
+    "description": "Label for the option to delete the current song from the device"
+  },
+  "deleteSongConfirmTitle": "Delete Song",
+  "@deleteSongConfirmTitle": {
+    "description": "Title of the dialog that confirms deleting a song from the device"
+  },
+  "deleteSongConfirmMessage": "This deletes the file from your device. This cannot be undone.",
+  "@deleteSongConfirmMessage": {
+    "description": "Body of the dialog that confirms deleting a song from the device"
+  },
+  "deleteSongFailedMessage": "Could not delete this file.",
+  "@deleteSongFailedMessage": {
+    "description": "Shown when deleting a song file fails"
+  },
   "editSongScreenTitle": "Edit Song",
   "@editSongScreenTitle": {
     "description": "Title for the song edit screen"
@@ -632,6 +648,10 @@
     "description": "The accessibility label for the buffering indicator on the Now Playing progress bar"
   },
   "preventDuplicateTracksTitle": "Prevent Duplicate Tracks",
+  "deletePodcastsAfterPlayingTitle": "Delete Podcasts After Playing",
+  "@deletePodcastsAfterPlayingTitle": {
+    "description": "Setting that deletes a podcast file from the device once it finishes playing"
+  },
   "@preventDuplicateTracksTitle": {
     "description": "Library Settings toggle to hide tracks with duplicate file names"
   },

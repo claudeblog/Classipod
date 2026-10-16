@@ -15,6 +15,22 @@
   playlist, create a new one with a typed name, or fall back to On-The-Go, from
   songs, albums, search results and Now Playing alike. Saving the On-The-Go
   playlist also asks for a name instead of auto-numbering it.
+- Podcasts and audiobooks now remember where you stopped. The playback position
+  is stored with the saved session and resumed on the next launch, so a long
+  episode or chapter continues where it left off. Music still starts from the
+  beginning.
+- The status bar shows the system time next to the play/pause icon, refreshed
+  when the minute changes.
+- Returning to a podcast or audiobook keeps its playback position within the
+  session: switching to another item and back resumes where it stopped instead
+  of restarting from the beginning.
+- Now Playing has a Delete option in its menu. It asks for confirmation and
+  removes the file from the device, dropping it from the library index and from
+  every playlist that contained it.
+- Library Settings has a Delete Podcasts After Playing switch. With it on, a
+  podcast file is removed from the device as soon as it finishes playing, so
+  listened episodes clean themselves up. Music and audiobooks are never
+  touched.
 
 ## 2.1.0
 ### New features

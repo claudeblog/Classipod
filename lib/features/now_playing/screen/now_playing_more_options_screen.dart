@@ -1,11 +1,17 @@
 import 'dart:async';
 
 import 'package:classipod/core/extensions/build_context_extensions.dart';
+import 'package:classipod/core/models/music_metadata.dart';
 import 'package:classipod/core/navigation/routes.dart';
+import 'package:classipod/core/providers/filtered_audio_files_provider.dart';
+import 'package:classipod/core/services/audio_player_service.dart';
+import 'package:classipod/core/services/song_deletion_service.dart';
 import 'package:classipod/core/widgets/display_list_tile.dart';
 import 'package:classipod/features/custom_screen_elements/custom_screen.dart';
 import 'package:classipod/features/music/album/providers/album_details_provider.dart';
+import 'package:classipod/features/music/playlist/providers/playlists_provider.dart';
 import 'package:classipod/features/music/playlist/widgets/add_to_playlist_helper.dart';
+import 'package:classipod/features/music/songs/provider/songs_provider.dart';
 import 'package:classipod/features/music/songs/screens/song_edit_screen.dart';
 import 'package:classipod/features/now_playing/provider/now_playing_details_provider.dart';
 import 'package:cupertino_ui/cupertino_ui.dart';
@@ -17,6 +23,7 @@ enum _NowPlayingMoreOptions {
   browseAlbum,
   browseArtist,
   editSong,
+  deleteSong,
   sleepTimer,
   cancel;
 
@@ -30,6 +37,8 @@ enum _NowPlayingMoreOptions {
         return context.localization.browseArtist;
       case editSong:
         return context.localization.editSongOption;
+      case deleteSong:
+        return context.localization.deleteSongOption;
       case sleepTimer:
         return context.localization.sleepTimerTitle;
       case cancel:
@@ -70,6 +79,37 @@ class _NowPlayingMoreOptionsScreenState
         context.pop();
       }
     });
+  }
+
+  Future<void> _deleteCurrentSong(MusicMetadata song) async {
+    final isCurrent =
+        ref.read(nowPlayingDetailsProvider).currentMetadata?.identity ==
+        song.identity;
+    if (isCurrent) {
+      await ref.read(audioPlayerServiceProvider.notifier).nextSong();
+    }
+    final deleted = await deleteSongFromDevice(song);
+    if (!deleted) {
+      if (!mounted) return;
+      await showCupertinoDialog<void>(
+        context: context,
+        builder: (dialogContext) => CupertinoAlertDialog(
+          title: Text(context.localization.deleteSongConfirmTitle),
+          content: Text(context.localization.deleteSongFailedMessage),
+          actions: [
+            CupertinoDialogAction(
+              onPressed: () => Navigator.of(dialogContext).pop(),
+              child: Text(context.localization.cancelText),
+            ),
+          ],
+        ),
+      );
+      return;
+    }
+    ref.invalidate(filteredAudioFilesProvider);
+    ref.invalidate(albumDetailsProvider);
+    ref.invalidate(songsProvider);
+    ref.invalidate(playlistsProvider);
   }
 
   Future<void> _navigateToScreen(_NowPlayingMoreOptions optionItem) async {
@@ -121,6 +161,36 @@ class _NowPlayingMoreOptionsScreenState
           builder: (dialogContext) =>
               SongEditScreen(songMetadata: currentSongMetadata),
         );
+        if (mounted) {
+          _closeScreen();
+        }
+        break;
+      case _NowPlayingMoreOptions.deleteSong:
+        if (currentSongMetadata == null) {
+          _closeScreen();
+          return;
+        }
+        final confirmed = await showCupertinoDialog<bool>(
+          context: context,
+          builder: (dialogContext) => CupertinoAlertDialog(
+            title: Text(context.localization.deleteSongConfirmTitle),
+            content: Text(context.localization.deleteSongConfirmMessage),
+            actions: [
+              CupertinoDialogAction(
+                onPressed: () => Navigator.of(dialogContext).pop(false),
+                child: Text(context.localization.cancelText),
+              ),
+              CupertinoDialogAction(
+                isDestructiveAction: true,
+                onPressed: () => Navigator.of(dialogContext).pop(true),
+                child: Text(context.localization.deleteSongOption),
+              ),
+            ],
+          ),
+        );
+        if (confirmed == true) {
+          await _deleteCurrentSong(currentSongMetadata);
+        }
         if (mounted) {
           _closeScreen();
         }
